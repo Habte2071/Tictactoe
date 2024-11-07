@@ -1,0 +1,133 @@
+/* Overall container styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(to right, #100350, #100350); /* Soft gradient background */
+    padding: 20px; /* Add padding for mobile spacing */
+}
+
+/* Title styling */
+.title {
+    margin: 30px 0;
+    color: #09fcf4;
+    font-size: 64px;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    text-align: center; /* Center title */
+}
+
+.title span {
+    color: #9a7baf; /* Different color for emphasis */
+    padding-left: 15px;
+}
+
+/* Reset button styling */
+.reset {
+    width: 250px;
+    height: 80px;
+    border: none;
+    border-radius: 50px;
+    font-size: 24px;
+    color: #ffffff; /* White text for better contrast */
+    background: linear-gradient(135deg, #ff6b6b, #ff3d3d); /* Gradient background */
+    box-shadow: 0 4px 15px rgba(255, 61, 61, 0.5); /* Subtle shadow for depth */
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s; /* Smooth transitions */
+    margin-top: 20px;
+    font-weight: bold; /* Bold text for emphasis */
+    cursor: pointer; /* Change cursor to pointer */
+    outline: none; /* Remove outline */
+}
+
+.reset:hover {
+    background: linear-gradient(135deg, #ff3d3d, #ff1a1a); /* Darker gradient on hover */
+    transform: translateY(-4px); /* Lift effect on hover */
+    box-shadow: 0 8px 30px rgba(255, 61, 61, 0.7); /* Enhanced shadow effect */
+}
+
+.reset:active {
+    transform: translateY(2px); /* Pressed effect */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Reduce shadow on press */
+}
+
+/* Board styling */
+.board {
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(3, 160px); /* Fixed width for each column */
+    grid-gap: 10px; /* Gap between boxes */
+    margin: auto;
+    justify-content: center; /* Center content */
+}
+
+/* Box styling */
+.boxs {
+    display: flex;
+    justify-content: center; /* Center content */
+    align-items: center; /* Center content */
+    height: 160px; /* Fixed height */
+    width: 160px; /* Fixed width */
+    background-color: #f50dc7; /* Soft purple background */
+    border: 2px solid #ffffff; /* White border */
+    font-size: 48px; /* Set font size for X and O */
+    color: white; /* Font color */
+    border-radius: 10px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.boxs:hover {
+    background-color: #5a54d9; /* Darker purple on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Winner message styling */
+.winner-message {
+    font-size: 32px; /* Bigger font size for emphasis */
+    font-weight: bold; /* Bold text */
+    color: #ff4757; /* Exciting color for the message */
+    text-align: center; /* Center the text */
+    margin: 20px; /* Spacing around the message */
+    padding: 10px; /* Padding for better readability */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    border: 2px solid #ff4757; /* Border matching the text color */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+/* Congratulations image styling */
+.congrats-image {
+    display: none; /* Initially hidden */
+    width: 150px; /* Adjust size as needed */
+    margin-top: 20px; /* Spacing above the image */
+    border-radius: 10px; /* Rounded corners */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.congrats-image:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .title {
+        font-size: 36px; /* Adjust title size on smaller screens */
+    }
+
+    .reset {
+        width: 180px; /* Adjust reset button size */
+        height: 60px; /* Adjust height */
+        font-size: 18px; /* Adjust font size */
+    }
+
+    .boxs {
+        height: 100px; /* Adjust box size for smaller screens */
+        width: 100px; /* Adjust box size for smaller screens */
+        font-size: 24px; /* Adjust font size for X and O */
+    }
+
+    .board {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 350px; /* Limit max width */
+    }
+}
